@@ -16,12 +16,13 @@ const BodyContainer = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   gap: 2,
-  padding: 32,
+  padding: 20,
   backgroundColor: "white",
   borderRadius: 8,
   width: "80%",
   [theme.breakpoints.up("sm")]: {
     width: "500px",
+    padding: 32,
   },
   [theme.breakpoints.up("md")]: {
     width: "600px",
@@ -41,8 +42,10 @@ const ImageContainer = styled(Box)(({ theme }) => ({
     height: "100%",
     borderRadius: 6,
     objectFit: "cover",
+    display: "none",
     [theme.breakpoints.up("sm")]: {
       width: "100%",
+      display: "flex",
     },
   },
 }));
