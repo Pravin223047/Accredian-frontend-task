@@ -143,8 +143,6 @@ const Header = () => {
             lastName: user.lastName,
           }
         );
-        setSuccessMessage("User data sent successfully!");
-        setSnackbarOpen(true);
         return response.data;
       } catch (error) {
         console.error("Error sending user data to backend:", error);
