@@ -32,7 +32,10 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   background: "#F5F5F5",
   boxShadow: "none",
   height: 74,
-  padding: "15px",
+  padding: "5px",
+  [theme.breakpoints.up("sm")]: {
+    padding: "15px",
+  },
   [theme.breakpoints.up("lg")]: {
     padding: "5px 15%",
   },
@@ -101,6 +104,7 @@ const ButtonCont = styled(Button)({
   color: "#fff",
   borderRadius: 5,
   fontSize: 10,
+  width: "300px",
   [themes.breakpoints.up("mdd")]: {
     fontSize: 12,
     width: "fit-content",
@@ -139,6 +143,8 @@ const Header = () => {
             lastName: user.lastName,
           }
         );
+        setSuccessMessage("User data sent successfully!");
+        setSnackbarOpen(true);
         return response.data;
       } catch (error) {
         console.error("Error sending user data to backend:", error);
@@ -185,7 +191,16 @@ const Header = () => {
             },
           }}
         >
-          <Typography sx={{ color: "#000" }} fontSize="sm">
+          <Typography
+            sx={{
+              color: "#000",
+              fontSize: ".8rem",
+              [theme.breakpoints.up("sm")]: {
+                fontSize: "1rem",
+              },
+            }}
+            fontSize="sm"
+          >
             Navigate your ideal career path with tailored expert advice
           </Typography>
           <ButtonCont>Contact Expert</ButtonCont>
