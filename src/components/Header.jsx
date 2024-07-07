@@ -33,9 +33,6 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   boxShadow: "none",
   height: 74,
   padding: "5px",
-  [theme.breakpoints.up("sm")]: {
-    padding: "15px",
-  },
   [theme.breakpoints.up("md")]: {
     padding: "5px 5%",
   },
