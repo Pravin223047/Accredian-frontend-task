@@ -104,7 +104,6 @@ const ButtonCont = styled(Button)({
   color: "#fff",
   borderRadius: 5,
   fontSize: 10,
-  width: "300px",
   [themes.breakpoints.up("mdd")]: {
     fontSize: 12,
     width: "fit-content",
@@ -143,6 +142,8 @@ const Header = () => {
             lastName: user.lastName,
           }
         );
+        setSuccessMessage("User data sent successfully!");
+        setSnackbarOpen(true);
         return response.data;
       } catch (error) {
         console.error("Error sending user data to backend:", error);
@@ -201,7 +202,16 @@ const Header = () => {
           >
             Navigate your ideal career path with tailored expert advice
           </Typography>
-          <ButtonCont>Contact Expert</ButtonCont>
+          <ButtonCont
+            sx={{
+              width: "300px",
+              [theme.breakpoints.up("sm")]: {
+                width: "100%",
+              },
+            }}
+          >
+            Contact Expert
+          </ButtonCont>
         </Toolbar>
       </StyledAppBar>
       <StyledAppBar position="fixed" sx={{ zIndex: 20, marginTop: "74px" }}>
@@ -225,7 +235,16 @@ const Header = () => {
                   <ButtonCont id="login" onClick={() => handleLogin()}>
                     Login
                   </ButtonCont>
-                  <ButtonCont>Try For Free</ButtonCont>
+                  <ButtonCont
+                    sx={{
+                      display: "none",
+                      [theme.breakpoints.up("sm")]: {
+                        display: "inline-flex",
+                      },
+                    }}
+                  >
+                    Try For Free
+                  </ButtonCont>
                 </>
               )}
             </ButtonsWrapper>
