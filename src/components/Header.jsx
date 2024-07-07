@@ -39,9 +39,6 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     padding: "5px 5%",
   },
-  [theme.breakpoints.up("lg")]: {
-    padding: "5px 15%",
-  },
 }));
 
 const OptionWrapper = styled(Box)({
