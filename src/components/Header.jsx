@@ -205,7 +205,7 @@ const Header = () => {
           <ButtonCont
             sx={{
               width: "300px",
-              [theme.breakpoints.up("sm")]: {
+              [theme.breakpoints.up("xs")]: {
                 width: "100%",
               },
             }}
